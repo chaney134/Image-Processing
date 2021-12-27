@@ -1,31 +1,55 @@
 # Image-Processing
 
 ## Contents
-0.练习前准备
-0.1 安装与运行
-0.2 图片读取与类型查看
+0.The Preparation Before Excercises
+0.1 Install and Start
+0.2 Read Images and Search sizes
+0.3 Search Types
+0.4 Open Images
+0.5 Change Types
 
-1.基于https://github.com/yoyoyo-yo/Gasyori100knock.git 图像处理的练习
+1. The Exercises on Image-Processing (Based on https://github.com/yoyoyo-yo/Gasyori100knock.git)(for my self-learning)
 
-### 0 练习前准备
-#### 0.1 安装与运行
-使用python 3.9环境
-安装Miniconda，打开Anaconda Powershell
-创建虚拟环境 conda create python=3.9 -n gasyori100
-激活虚拟环境 conda activate gasyori100
-将本地位置移到在github克隆的文件夹里。如果因为一些文件夹命名有空格所以cd命令报错，可以利用ls+tab避免
-安装以下3个模块：pip install numpy matplotlib opencv-python
-打出 python ，运行
-#### 0.2 图片读取与大小查看
+## 0 The Preparation Before Excercises
+### 0.1 Install and Start
+Download and install python 3.9
+Download ```Miniconda```, open ```Anaconda Powershell```
+Create a virtual environment
 ```
->>>import cv2 #导入OpenCV，在Image-Processing中OpenCV只用来打开和关闭图像，其他的功能用numpy练习
->>>import numpy as np #导入numpy模块并记为np
->>>img=cv2.imread("rice.jpg") #cv2.imread命令打开图像，注意图像如果不是存在环境对应的本地位置，需要写全地址+命名。将该图像的信息储存到变量img中。等号前后有无空格都可以。
->>>img.shape #.shape命令查看该变量的大小
-(1280,1740,3) #该输出结果表示该图像高1280 px，宽1740 px，有三个通道（红绿蓝）
+>>>conda create python=3.9 -n gasyori100
 ```
-### 0.3 类型查看
+and activate it
 ```
->>>img.dtype #查看图片类型
-dtype('unit8') #unit8表示8个无符号整数，（R,G,B）分量皆用0-255共2^8(256）个数表示。
+>>>conda activate gasyori100
 ```
+Move to the folder where there are the folders you cloned form github. If there is folder on the pathway, whose name has a space, an error may be given when you use "cd". So you can use "ls+tab" to avoid it.
+Install 3 modules:
+```
+>>>pip install numpy matplotlib opencv-python
+```
+Type "python", start it.
+
+### 0.2 Read Images and Search Size
+```
+>>>import cv2   # Import OpenCV as "cv2". We only use OpenCV to open and close images in our exercises. Other functions we try to use the module "numpy".
+>>>import numpy as np   #Import the mpdule "numpy" and mame it as "np"
+>>>img=cv2.imread("rice.jpg")    #Use the order "cv2.imread" to open images. Notice that if the location of the image is not uniform to your virtual python, you should write a fuller name of the image you want to open. This step we store the information of the image to a variable "img". A space before or after the equal sign can be omitted.
+>>>img.shape    #The order".shape" is to look up the size of the variable.
+(1280,1740,3)     #This result reveals that the image is 1280 px in height and 1740 px in breadth, and there are 3 channels (red, blue, green).
+```
+### 0.3 Search types
+```
+>>>img.dtype     # to look up to the type of an image
+dtype('uint8')     #"Uint8" representes an integer which has 8 positions in binary form. The 3 componets of **(B,G,R)** is represented by 0-255(The total number is 2^8=256).
+```
+### 0.4 Open Images
+```
+>>>cv2.imshow('',img);cv2.waitKey(0) 
+```
+"cv2.imshow()" is the order to open an image. The first parameter is the name of window which can be ommited; ```'```and```"``` are both OK. And the second is the name of variable representing your image.
+"cv2.waitKey()"is an order to close the image. The parameter is the time of showing (ms). This order must be used the same time as the former oeder; or your Python will break dowm. It doesn't matter whether there is a space after the semicolon. You can write this order several lines after the open order, but you have to run the program after the waitKey order is written. If the parameter is 0, the image will be closed after any key is pressed.
+### 0.5 Change Types 
+```
+>>>_img=img.astype(np.float32) ###Definite another variable "_img", which is "img" changed type. ORIGIN_IMAGE.astype(NEW_TYPE).Note that this order return to an image. 
+```
+You can open and close it using the same way. 
