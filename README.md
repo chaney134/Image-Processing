@@ -10,13 +10,13 @@
 0.6 Manipulate Pixels  
 0.7 Save Images
 
-1. The Exercises on Image-Processing (Based on https://github.com/yoyoyo-yo/Gasyori100knock.git)(for my self-learning)
+1. The Exercises on Image-Processing (Based on https://github.com/yoyoyo-yo/Gasyori100knock.git)  (for my self-learning)
 
 ## 0 The Preparation Before Excercises
 ### 0.1 Install and Start
 Download and install python 3.9    
 Download ```Miniconda```, open ```Anaconda Powershell```. We can also use the command prompt of ```Windows```, but if the folders we cloned are in D disk, we can not change our pathway from C to D by merely using the order "cd".   
-Create a virtual environment
+Create a virtual environment. (If we have sufficient room in our computer, we can download ```Anaconda``` in one go.)
 ```
 >>>conda create python=3.9 -n gasyori100
 ```
